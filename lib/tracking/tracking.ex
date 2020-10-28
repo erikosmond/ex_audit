@@ -47,7 +47,7 @@ defmodule ExAudit.Tracking do
   def track_change(module, action, changeset, resulting_struct, opts) do
     if not Keyword.get(opts, :ignore_audit, false) do
       changes = find_changes(action, changeset, resulting_struct)
-
+      IO.inspect(changes, label: "changes!!")
       insert_versions(module, changes, opts)
     end
   end

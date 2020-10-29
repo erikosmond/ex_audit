@@ -10,6 +10,7 @@ defmodule ExAudit.Type.Patch do
     |> ok()
   end
   def load(binary) do
+    binary
     |> :erlang.binary_to_term()
     |> Base.encode64()
     |> ok()
